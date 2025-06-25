@@ -1,10 +1,10 @@
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs"); //for hashing passwords
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
 
 // Signup Endpoint Logic
-exports.signup = async (req, res) => {
+exports.signup = async (req, res) => { //export a signup function
     const { username, email, password } = req.body;
 
     // Check if user already exists by email or username
