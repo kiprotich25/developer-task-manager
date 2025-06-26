@@ -2,7 +2,7 @@ const Task = require("../models/Task");
 
 // POST /api/tasks
 exports.createTask = async (req, res)=> {
-    const task = await Task.create({ ...req.body, owner: req.user.id});
+    const task = await Task.create({ ...req.body, owner: req.user.id});///copy-pastes everything from the user in frontend & owns it to a user
     res.json(task);
 };
 
@@ -14,7 +14,7 @@ exports.getMyTasks = async (req, res) => {
 
 // GET /api/tasks/all
 exports.getAllTasks = async (req, res) => {
-    const tasks = await Task.find().populate("owner", "username email");
+    const tasks = await Task.find().populate("owner", "username email");//show the user info alongside each task.
     res.json(tasks);
 };
 

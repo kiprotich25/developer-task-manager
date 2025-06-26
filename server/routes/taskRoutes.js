@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/", protect, createTask);
 router.get("/me", protect, getMyTasks);
-router.get("/all", protect, authorize(["admin"]), getAllTasks);
+router.get("/all", protect, authorize(["admin"]), getAllTasks);//only admins access this route
 router.put("/:id", protect, updateTask);
 router.delete("/:id", protect, deleteTask);
 

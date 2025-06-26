@@ -20,7 +20,7 @@ exports.signup = async (req, res) => { //export a signup function
     const token = jwt.sign({ id: user._id, role: user.role, username: user.username}, process.env.JWT_SECRET, {
         expiresIn: '1h'
     });
-    res.json({ token });
+    res.json({ token });// avoids signing up then logging in again
 };
 
 // Login Endpoint Logic
