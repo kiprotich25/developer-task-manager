@@ -12,7 +12,7 @@ export default function Navbar() {
   
   const logout = () => {
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    window.location.href = "/login"; //if logged out redirect user to log in in order to see nav bar
   };
 
   return (

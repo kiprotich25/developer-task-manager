@@ -10,7 +10,7 @@ export default function DeveloperDashboard() {
 
   const load = async () => {
     const res = await API.get("/tasks/me");
-    setTasks(res.data);
+    setTasks(res.data); //similar to res.json coming from backend
   };
 
   useEffect(() => { load(); }, []);
@@ -21,7 +21,7 @@ export default function DeveloperDashboard() {
     toast("Task created ✔️");
   };
 
-  const toggleTask = async (id) => {
+  const toggleTask = async (id) => { //updating task
     const task = tasks.find(t => t._id === id);
     const res = await API.put(`/tasks/${id}`, { completed: !task.completed });
     setTasks(prev => prev.map(t => (t._id === id ? res.data : t)));

@@ -13,7 +13,7 @@ export default function TaskDialog({ onSubmit }) {
 
   const handleCreate = () => {
     onSubmit({ title, description });
-    setTitle("");
+    setTitle("");//empty the input fields
     setDescription("");
   };
 
